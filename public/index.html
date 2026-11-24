@@ -247,6 +247,14 @@
 
       /* ---------- scroll-scrub hero ---------- */
       #freshness { position: relative; height: 660svh; }
+      /* The sticky scrub stage can only travel inside its parent (#hero-mount).
+         With no height the mount is only as tall as the 100svh stage itself,
+         so the stage has zero sticky room and scrolls away with the page,
+         leaving the pin blank for the whole section. Spanning the section
+         gives it the full 560svh of travel. (In reduced-motion mode the
+         section height becomes auto, so this resolves to auto there and the
+         static hero is unaffected.) */
+      #hero-mount { height: 100%; }
       .scrub-stage {
         position: sticky; top: 0; height: 100svh; overflow: hidden; background: var(--cream);
       }
